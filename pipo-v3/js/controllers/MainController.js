@@ -1,5 +1,5 @@
 app.controller('MainController', ['$scope', 'piposervice', function($scope, piposervice) {
-	$scope.title = 'Deviens empathique, cher Manager !';
+	$scope.title = 'I\'m not an on-demand trolling machine';
 	$scope.phrase = "";
 	$scope.pipos = [
 		{
@@ -68,64 +68,11 @@ app.controller('MainController', ['$scope', 'piposervice', function($scope, pipo
 				$scope.pipos[i].current = pipo.content[j];
 				$scope.pipos[i].currentId = j;
 				console.log("Pipo added : " + $scope.pipos[i].current);
-				// if (i>1) {
-				// 	$scope.pipos[i-1].current = $scope.refreshPipo(i-1);
-				// 	console.log("Pipo selected after refresh : " + $scope.pipos[i-1].current);
-				// }
-				// if (!launch) {
-				// 	$scope.pipos[i].current = $scope.refreshPipo(i);
-				// }
 			};
 		};
 		$scope.generatePhrase();
 	};
 
-	// $scope.refreshPipo = function (idpipo) {
-	// 	var pipo = $scope.pipos[idpipo].content[$scope.pipos[idpipo].currentId];
-	// 	var hashtag = $scope.pipos[idpipo].currentHashtag;
-	// 	if ($scope.checkHashtag(idpipo)) {
-	// 		$scope.pipos[idpipo].current = pipo.substring(0,pipo.length-1) + $scope.replaceHashtag(idpipo);
-	// 		console.log("Pipo refreshed : " + $scope.pipos[idpipo].current);
-	// 	}
-	// 	else if ((idpipo == 3) && $scope.checkHashtag(idpipo)) {
-	// 		$scope.pipos[idpipo].current = pipo.substring(0,pipo.length-1) + $scope.replaceHashtag(idpipo);
-	// 		console.log("Pipo refreshed : " + $scope.pipos[idpipo].current);
-	// 	}
-	// 	else {
-	// 		console.log("Pipo not refreshed : " + $scope.pipos[idpipo].current);
-	// 	}
-	// 	return $scope.pipos[idpipo].current;
-	// }
-
-	// $scope.checkHashtag = function(idpipo) {
-	// 	var pipo = $scope.pipos[idpipo].content[$scope.pipos[idpipo].currentId];
-	// 	if (pipo.charAt(pipo.length-1) == "#") {
-	// 		$scope.pipos[idpipo].currentHashtag = true;
-	// 		return true;
-	// 	}
-	// 	else {
-	// 		return false;
-	// 	}
-	// }
-
-	// $scope.replaceHashtag = function(idpipo) {
-	// 	var aux = "aeiouyhéè";
-	// 	var boule = false;
-	// 	var liaison = "";
-	// 	for (i = 0 ; i<aux.length ; i++) {
-	// 			if ($scope.pipos[idpipo+1].current[0] == aux.charAt(i)) {
-	// 				boule = true;
-	// 				break;
-	// 			}
-	// 		}
-	// 		if (boule) {
-	// 			liaison = "'";
-	// 		}
-	// 			else {
-	// 				liaison = "e";
-	// 			}
-	// 	return liaison;
-	// }
 
 
 }])
