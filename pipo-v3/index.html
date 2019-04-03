@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<title>Le Pipotron du <del>Product</del> Management</title>
+	<link href="css/bootstrap.css" rel="stylesheet" />
+	<link href="css/bootstrap-responsive.css" rel="stylesheet" />
+	<link href="css/main.css" rel="stylesheet" type='text/css' />
+	<!-- <link href='https://fonts.googleapis.com/css?family=Roboto:500,300,700,400' rel='stylesheet' type='text/css'> -->
+	<script src="js/shared/angular.min.js"></script>
+
+</head>
+
+<body ng-app="PipotronApp">
+	<header class="header">
+		<div class="container">
+			<h1>Le Pipotron du <del>Product</del> Management</h1>
+		</div>
+	</header>
+	<main class="main">
+		<div class="container" ng-controller="MainController">
+			<div class="jumbotron">
+				<div class="content">
+					<h3> {{ title }} </h3>
+					<p class="lead">"
+						<span ng-repeat="pipo in pipos" ng-click="selectPipoN(pipo.id, false)" class="text-part">
+							{{ pipo.current }}
+						</span>
+						"
+					</p>
+				<div class="action-buttons">
+					<span>
+		      		<button class="btn btn-lg btn-pipotron btn-large" ng-click="selectPipo(false)" role="button">Plus d'empathie !</button>
+		      		<!-- <a class="twitter-share-button btn btn-lg btn-twitter btn-large" href="https://twitter.com/intent/tweet?text={{phrase}}&via=innothiga"  target="_blank">Je Tweete mon pipeau</a>
+		      		</span> -->
+				</div>
+				</div>
+			</div>
+			<!-- <footer class="footer-content">
+				<div >
+				<h3>Vous n'y comprenez rien ?</h3>
+				<a href="http://blog.thiga.fr/glossaire/" target="_blank"><img src="https://media.giphy.com/media/k61nOBRRBMxva/giphy.gif"/></a>
+				<h4>Consultez notre <a href="http://blog.thiga.fr/glossaire/" target="_blank">Glossaire</a> !</h4>
+				</div>
+			</footer> -->
+		</div>
+	</main>
+
+
+
+    <!-- Modules -->
+    <script src="js/app.js"></script>
+
+    <!-- Controllers -->
+    <script src="js/controllers/MainController.js"></script>
+
+    <!-- Services -->
+    <script src="js/services/piposervice.js"></script>
+</body>
+
+</html>
